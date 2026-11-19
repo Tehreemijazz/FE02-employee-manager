@@ -13,13 +13,11 @@ A modular vanilla-JavaScript app for managing employees, built with ES modules.
 
 ## Getting started
 
-```bash
 npm install
 npm start          # serves the folder (ES modules need http://, not file://)
 npm run lint       # check code quality
 npm run lint:fix   # auto-fix lint issues
 npm run format     # format with Prettier
-```
 
 ## Folder structure
 
