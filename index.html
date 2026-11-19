@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Employee Manager</title>
+    <link rel="stylesheet" href="src/styles/main.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1>Employee Manager</h1>
+        <button id="export-btn" type="button" class="btn btn--ghost">
+          Export CSV
+        </button>
+      </header>
+
+      <section class="panel" aria-labelledby="form-title">
+        <h2 id="form-title">Add employee</h2>
+        <form id="employee-form" novalidate>
+          <input type="hidden" name="id" />
+          <label>Name <input name="name" type="text" /></label>
+          <label>Email <input name="email" type="email" /></label>
+          <label>
+            Department
+            <select name="department"></select>
+          </label>
+          <label
+            >Salary (USD) <input name="salary" type="number" min="1"
+          /></label>
+          <label>Hire date <input name="hireDate" type="date" /></label>
+          <div class="form__actions">
+            <button type="submit" class="btn" id="submit-btn">
+              Add employee
+            </button>
+            <button type="button" class="btn btn--ghost" id="cancel-btn" hidden>
+              Cancel
+            </button>
+          </div>
+          <ul id="form-errors" class="errors" role="alert"></ul>
+        </form>
+      </section>
+
+      <section class="panel" aria-labelledby="list-title">
+        <h2 id="list-title">Employees</h2>
+        <div class="filters">
+          <input id="search-name" type="search" placeholder="Search by name" />
+          <select id="filter-department"></select>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Department</th>
+              <th>Salary</th>
+              <th>Hired</th>
+              <th><span class="sr-only">Actions</span></th>
+            </tr>
+          </thead>
+          <tbody id="employee-rows"></tbody>
+        </table>
+        <p id="empty-state" hidden>No employees match. Add one above.</p>
+      </section>
+    </main>
+
+    <!-- Entry point: the browser loads main.js as an ES module -->
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
